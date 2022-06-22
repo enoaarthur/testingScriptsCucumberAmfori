@@ -13,11 +13,6 @@ Feature: feature to start a monitoring
     And clicks on login button
     When auditor is logged in 
     And auditor clicks on Bounded Context Monitoring
-    And Auditor clicks on button Request Monitoring
-    And Auditor selects the Business Partner he wants to audit and Member clicks on Next Step
-    And Auditor selects the site and clicks next
-    And Auditor selects the initiative, the activity, the announcement type, the time window and clicks on Next Step twice
-    And auditor selects the Monitoring Party and clicks on Request
     Then the message "The monitoring is requested" should be displayed
     
     Examples: 
