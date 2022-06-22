@@ -64,6 +64,31 @@ public WebDriver l2driver;
 	 @CacheLookup 
 	WebElement link2BCMonitoring;
 	
+	@FindBy(xpath="//a[@href='/ui/monitoring/monitoring-assignments/todo']")
+	 @CacheLookup 
+	WebElement link2StartMonitoring;
+	
+	
+	@FindBy(id="filter-dropdown-button-monitoring.monitoring.id")	
+	@CacheLookup 
+	WebElement SearchAuditToStart;
+	
+	
+	@FindBy(id="filter-freetext-monitoring.monitoring.id")	
+	@CacheLookup 
+	WebElement MonitoringID2Filter;
+	
+	@FindBy(xpath="//button[@id='filter-searchButton']")
+	  @CacheLookup 
+	  WebElement btnConfirmSearchMonioringID;
+	
+	@FindBy(xpath="//table[@id='monitoringAssignmentOverview']/tbody/tr/td[1]")
+	 @CacheLookup 
+	WebElement ItemOfTheMonitoring2Start;
+	
+	
+	
+	
 	
 	@FindBy(xpath="button[@id='request-monitoring']")
 	 @CacheLookup 
@@ -87,7 +112,6 @@ public WebDriver l2driver;
 	
 	
 	@FindBy(xpath="//table[@id='monitoredSiteOverview']/tbody/tr[1]")
-	
 	 @CacheLookup 
 	WebElement chkboxmonitoredPartySite;
 	
@@ -152,6 +176,7 @@ public WebDriver l2driver;
 	@FindBy(id="requestedTimeWindowToDate")	
 	@CacheLookup 
 	WebElement dtRequestTo;
+
 	
 	
 	
@@ -387,6 +412,32 @@ public WebDriver l2driver;
 	public void go2MonitoringRequestPage() {
 		link2BCMonitoring.click();
 	}
+	
+	public void go2MonitoringToDo() throws InterruptedException {
+		link2StartMonitoring.click();
+		
+		Thread.sleep(4000);
+	}
+	
+	public void searchMonitoring2Start() {
+		SearchAuditToStart.click();;
+	}
+	
+	public void fillTheMonitoringKey(String monitoringID) throws InterruptedException {
+		MonitoringID2Filter.sendKeys(monitoringID);
+		btnConfirmSearchMonioringID.click();
+		
+		Thread.sleep(4000);
+		
+	}
+	
+	public void OpenTheMonitoring2Start() throws InterruptedException {
+		ItemOfTheMonitoring2Start.click();
+		Thread.sleep(4000);
+	}
+	
+	
+	
 	
 	public void requestANewMonitoring() {
 		btnNewMonitoringRequest.click();

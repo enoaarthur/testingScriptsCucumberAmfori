@@ -13,9 +13,10 @@ Feature: feature to start a monitoring
     And clicks on login button
     When auditor is logged in 
     And auditor clicks on Bounded Context Monitoring
-    Then the message "The monitoring is requested" should be displayed
+    Then the auditor searh the audit to start by "<monitoringID>" 
+    And Open the Monitoring to start
     
     Examples: 
-      | username        | password             |# Role
-      | RK@self.be      | QT5vNXe6qWxF@$Y6RvM5 |# Auditor
+      | username        | password             | monitoringID |# Role
+      | RK@self.be      | QT5vNXe6qWxF@$Y6RvM5 | 22-0007076   |# Auditor
     
