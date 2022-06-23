@@ -1,6 +1,7 @@
 package StepDefinitions;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -49,5 +50,24 @@ public class StartMonitoringSteps {
 	public void open_the_monitoring_to_start() throws InterruptedException {
 	    lp2.OpenTheMonitoring2Start();
 	}
+	@Then("Click on the start button and confirm")
+	public void click_on_the_start_button() throws InterruptedException {
+	    lp2.click2StartMonitoring();
+	}
+	
+	@Then("go to the tab General Description")
+	public void go_to_the_tab_general_description() throws InterruptedException {
+	    lp2.fillGeneralDescription();
+	}
+	@Then("Open the Tab Report")
+	public void open_the_tab_report() throws InterruptedException {
+	    lp2.openTheTabReport();
+	}
+	
+	@Then("Start filling the Monitoring Details")
+	public void start_filling_the_monitoring_details() throws InterruptedException {
+	    lp2.go2TheMonitoringDetails();
+	}
+
 
 }

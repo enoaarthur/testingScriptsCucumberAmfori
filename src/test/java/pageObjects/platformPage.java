@@ -60,34 +60,6 @@ public WebDriver l2driver;
 	  WebElement btnConfirmAddSites;
 	
 			
-	@FindBy(xpath="//a[@href='/ui/monitoring/requested-monitorings']")
-	 @CacheLookup 
-	WebElement link2BCMonitoring;
-	
-	@FindBy(xpath="//a[@href='/ui/monitoring/monitoring-assignments/todo']")
-	 @CacheLookup 
-	WebElement link2StartMonitoring;
-	
-	
-	@FindBy(id="filter-dropdown-button-monitoring.monitoring.id")	
-	@CacheLookup 
-	WebElement SearchAuditToStart;
-	
-	
-	@FindBy(id="filter-freetext-monitoring.monitoring.id")	
-	@CacheLookup 
-	WebElement MonitoringID2Filter;
-	
-	@FindBy(xpath="//button[@id='filter-searchButton']")
-	  @CacheLookup 
-	  WebElement btnConfirmSearchMonioringID;
-	
-	@FindBy(xpath="//table[@id='monitoringAssignmentOverview']/tbody/tr/td[1]")
-	 @CacheLookup 
-	WebElement ItemOfTheMonitoring2Start;
-	
-	
-	
 	
 	
 	@FindBy(xpath="button[@id='request-monitoring']")
@@ -409,33 +381,130 @@ public WebDriver l2driver;
 		BtLoggin.click();
 	}
 	
+	
+	
+	@FindBy(xpath="//a[@href='/ui/monitoring/requested-monitorings']")
+	 @CacheLookup 
+	WebElement link2BCMonitoring;
+	
 	public void go2MonitoringRequestPage() {
 		link2BCMonitoring.click();
 	}
 	
+	
+	
+	@FindBy(xpath="//a[@href='/ui/monitoring/monitoring-assignments/todo']")
+	 @CacheLookup 
+	WebElement link2StartMonitoring;
+	
+	
 	public void go2MonitoringToDo() throws InterruptedException {
 		link2StartMonitoring.click();
 		
-		Thread.sleep(4000);
+		Thread.sleep(1000);
 	}
+	
+	
+	
+	@FindBy(id="filter-dropdown-button-monitoring.monitoring.id")	
+	@CacheLookup 
+	WebElement SearchAuditToStart;
 	
 	public void searchMonitoring2Start() {
 		SearchAuditToStart.click();;
 	}
 	
+	
+	@FindBy(id="filter-freetext-monitoring.monitoring.id")	
+	@CacheLookup 
+	WebElement MonitoringID2Filter;
+	
+	@FindBy(xpath="//button[@id='filter-searchButton']")
+	  @CacheLookup 
+	  WebElement btnConfirmSearchMonioringID;
+	
 	public void fillTheMonitoringKey(String monitoringID) throws InterruptedException {
 		MonitoringID2Filter.sendKeys(monitoringID);
 		btnConfirmSearchMonioringID.click();
 		
-		Thread.sleep(4000);
+		Thread.sleep(1000);
 		
 	}
 	
+	@FindBy(xpath="//table[@id='monitoringAssignmentOverview']/tbody/tr/td[1]")
+	 @CacheLookup 
+	WebElement ItemOfTheMonitoring2Start;
+	
 	public void OpenTheMonitoring2Start() throws InterruptedException {
 		ItemOfTheMonitoring2Start.click();
-		Thread.sleep(4000);
+		Thread.sleep(1000);
 	}
 	
+	@FindBy(xpath="//div[@id='startMonitoringBlock']")//button[@id='startMonitoringBlock']
+	  @CacheLookup 
+	  WebElement btn2Click2StartMonitoring;
+	
+
+	@FindBy(xpath="//button[@id='yes']")
+	  @CacheLookup 
+	  WebElement btn2ConfirmStartingMonitoring;
+	
+	public void click2StartMonitoring() throws InterruptedException {
+		btn2Click2StartMonitoring.click();
+		btn2ConfirmStartingMonitoring.click();
+		Thread.sleep(1000);
+	}
+	
+	
+	@FindBy(xpath="//a[@href='/ui/monitoring/monitoring-assignments/todo/acb73862-63b1-4688-8e46-8608b4a4387a/monitoring-reports/156-000091-001/general-description']")
+	 @CacheLookup 
+	WebElement link2OpenGenDesc;
+	
+	@FindBy(id="generalDescriptionInput")
+	   @CacheLookup
+	    WebElement TxtGeneralDescription;
+	
+	@FindBy(id="saveButton")
+	   @CacheLookup
+	    WebElement btnSaveGeneralDescription;
+	
+	public void fillGeneralDescription() throws InterruptedException {
+		link2OpenGenDesc.click();
+		
+		String TextArea = "The European languages are members of the same family."
+				+ " Their separate existence is a myth. For science, music, sport, "
+				+ "etc, Europe uses the same vocabulary. The languages only differ in "
+				+ "their grammar, their pronunciation and their most common words. "
+				+ "Everyone realizes why a new common language would be desirable: one "
+				+ "could refuse to pay expensive translators";
+		
+		TxtGeneralDescription.click();
+		TxtGeneralDescription.clear();
+		TxtGeneralDescription.sendKeys(TextArea);
+		btnSaveGeneralDescription.click();
+		Thread.sleep(1000);
+	}
+	
+	@FindBy(id="tab-monitoring.report")
+	   @CacheLookup
+	    WebElement btn2OpenTheTabReport;
+		
+	
+	public void openTheTabReport() throws InterruptedException {
+		btn2OpenTheTabReport.click();
+		
+		Thread.sleep(1000);
+	}
+	
+	@FindBy(id="section0")
+	   @CacheLookup
+	    WebElement link2StartFillingTheMonitoringDetails;
+	
+	public void go2TheMonitoringDetails() throws InterruptedException {
+		link2StartFillingTheMonitoringDetails.click();
+		
+		Thread.sleep(1000);
+	}
 	
 	
 	

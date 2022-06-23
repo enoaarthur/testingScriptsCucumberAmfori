@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -17,8 +18,12 @@ public class MySharedClass {
 		String projectPath = System.getProperty("user.dir");
 		System.setProperty("webdriver.chrome.driver",projectPath+"/src/test/resources/driver/chromedriver.exe" );
 		
-		if(driver==null)
-			driver = new ChromeDriver();
+		if(driver==null) {
+			
+			ChromeOptions co = new ChromeOptions();
+			co.setProxy(null);
+			driver = new ChromeDriver(co);
+		}
 		
 		
 		  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

@@ -15,6 +15,10 @@ Feature: feature to start a monitoring
     And auditor clicks on Bounded Context Monitoring
     Then the auditor searh the audit to start by "<monitoringID>" 
     And Open the Monitoring to start
+    #And Click on the start button and confirm
+    And go to the tab General Description 
+    Then Open the Tab Report
+    And Start filling the Monitoring Details
     
     Examples: 
       | username        | password             | monitoringID |# Role
