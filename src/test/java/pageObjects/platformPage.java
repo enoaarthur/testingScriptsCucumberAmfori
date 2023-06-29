@@ -172,9 +172,9 @@ public WebDriver l2driver;
 	
 		   
 	      // Another element to go to the traveler options particularly on the Stay tab
-		  @FindBy(xpath="//button[@data-testid='travelers-field-trigger']")
-		  @CacheLookup 
-		  WebElement linkTravelerForStay;
+		  //@FindBy(xpath="//button[@data-testid='travelers-field-trigger']")
+		  //@CacheLookup 
+		  //WebElement linkTravelerForStay;
 		  
 		  @FindBy(xpath="//a[@data-testid='travelers-field']")
 		  @CacheLookup 
