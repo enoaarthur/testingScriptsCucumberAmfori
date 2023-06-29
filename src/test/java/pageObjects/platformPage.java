@@ -78,6 +78,7 @@ public WebDriver l2driver;
 	WebElement btnAddSite;
 	
 	
+	
 	@FindBy(xpath="//table[@id='monitoredPartyOverview']/tbody/tr/td[3]")
 	 @CacheLookup 
 	WebElement chkboxmonitoredParty;
@@ -335,6 +336,24 @@ public WebDriver l2driver;
 			inputPassword.sendKeys(pwd);
 		}
 	   
+	   
+	   
+	   @FindBy(xpath="//button[@id='userActionMenu']")
+		 @CacheLookup 
+		WebElement btnUserActionMenu;
+	   
+	   public void click2ActionMenu() {
+		   btnUserActionMenu.click();
+	   }
+	   
+	   @FindBy(xpath="//a[@id='userActionMenuSignOutLink']")
+		 @CacheLookup 
+		WebElement usrSignOutLink;
+	   
+	   public void click2SignOut() {
+		   usrSignOutLink.click();
+	   }
+	   
 	// the function to login to the Main Page
 	   public void click2FillNewSiteDetails(String legalName, String address, String cityName) {
 		   int randParam = Utilities.getRandomNumberInRange(1, 5000);
@@ -500,9 +519,15 @@ public WebDriver l2driver;
 	   @CacheLookup
 	    WebElement link2StartFillingTheMonitoringDetails;
 	
+
+	@FindBy(id="MonitoringTeamAPSCA-0-0")
+	   @CacheLookup
+	    WebElement ApscaNumber;
+	
 	public void go2TheMonitoringDetails() throws InterruptedException {
 		link2StartFillingTheMonitoringDetails.click();
 		
+		ApscaNumber.sendKeys();		
 		Thread.sleep(1000);
 	}
 	

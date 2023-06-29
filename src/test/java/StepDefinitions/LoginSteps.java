@@ -30,10 +30,11 @@ public class LoginSteps {
 	
 	}
 	
-	@And("user is on login page")
-	public void user_is_on_login_page() {
-		driver.navigate().to("https://platform.tst.amfori.org/ui/");
+	@Given("user is on login page {string}")
+	public void user_is_on_login_page(String loginURL) {
+		driver.navigate().to(loginURL);
 	}
+	
 
 	
 	@When("user enters username as {string} and password as {string}")
@@ -53,6 +54,16 @@ public class LoginSteps {
 		
 		Thread.sleep(5000);
 		
+	}
+	
+	@When("clicks on user button to logout")
+	public void clicks_on_user_button_to_logout() {
+	    lp2.click2ActionMenu();
+	}
+
+	@When("user clicks on logout button")
+	public void user_clicks_on_logout_button() {
+	    lp2.click2SignOut();
 	}
 
 	@Then("user is navigated to the homepage")

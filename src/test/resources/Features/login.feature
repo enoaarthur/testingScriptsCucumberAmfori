@@ -6,9 +6,11 @@ Feature: feature to test login functionality
   Scenario Outline: Check login is successful with valid credentials
   
     Given a browser is open
-    And user is on login page
+    And user is on login page "https://platform.tst.amfori.org/ui/"
     When user enters username as "<username>" and password as "<password>"
     And clicks on login button
+    And clicks on user button to logout
+    And user clicks on logout button
     Then user is navigated to the homepage
     
     
